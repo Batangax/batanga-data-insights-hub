@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -21,8 +20,10 @@ export default {
     extend: {
       colors: {
         'batanga': {
-          'purple': '#9B87F5',
-          'green': '#90A955',
+          'skyblue': '#33C3F0',
+          'brightblue': '#1EAEDB',
+          'oceanblue': '#0EA5E9',
+          'darkblue': '#0C4A6E',
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
