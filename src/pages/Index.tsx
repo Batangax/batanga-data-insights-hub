@@ -1,31 +1,33 @@
-
 import { Button } from "@/components/ui/button";
 import { Navigation } from "@/components/Navigation";
 import { SectionTitle } from "@/components/ui/section-title";
 import { StatCard } from "@/components/stat-card";
 import { ServiceFeatureCard } from "@/components/service-feature-card";
-import { Shield, Database, ChartBar, Cpu } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Shield, Database, ChartBar, Cpu, Cloud } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Index() {
+  const navigate = useNavigate();
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white flex flex-col">
       <Navigation />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-batanga-darkblue to-batanga-skyblue py-16 px-4">
-        <div className="container mx-auto text-white">
+      <section className="bg-gradient-to-r from-batanga-darkblue to-batanga-skyblue py-12 px-4 flex flex-col justify-center">
+        <div className="container mx-auto text-white text-center md:text-left">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
             Analytics & Cybersecurity Solutions 2025
           </h1>
-          <p className="text-lg md:text-xl mb-6">
+          <p className="text-lg md:text-xl mb-6 max-w-2xl">
             Driving Business Decisions with Data & Advanced Cybersecurity Protection
           </p>
           <Button 
             size="lg" 
             className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold"
+            asChild
           >
-            Contact Us
+            <a href="mailto:batangaanalytics@gmail.com">Contact Us</a>
           </Button>
         </div>
       </section>
@@ -34,31 +36,40 @@ export default function Index() {
       <section className="py-8 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="bg-batanga-darkblue text-white rounded-md p-6 hover:shadow-lg transition-shadow">
+            <div className="bg-batanga-darkblue text-white rounded-md p-6 hover:shadow-lg transition-shadow flex flex-col">
               <h3 className="font-bold mb-2">Data Analytics</h3>
               <p className="text-sm mb-4">Transform your business with actionable insights</p>
-              <Button className="bg-yellow-500 hover:bg-yellow-600 text-black mt-2">
+              <Button
+                className="bg-yellow-500 hover:bg-yellow-600 text-black mt-auto"
+                onClick={() => navigate("/data-analytics")}
+              >
                 Learn More
               </Button>
             </div>
-            <div className="bg-batanga-darkblue text-white rounded-md p-6 hover:shadow-lg transition-shadow">
+            <div className="bg-batanga-darkblue text-white rounded-md p-6 hover:shadow-lg transition-shadow flex flex-col">
               <h3 className="font-bold mb-2">AI Solutions</h3>
               <p className="text-sm mb-4">Leverage machine learning for business growth</p>
-              <Button className="bg-yellow-500 hover:bg-yellow-600 text-black mt-2">
-                Learn More
+              <Button className="bg-yellow-500 hover:bg-yellow-600 text-black mt-auto" asChild>
+                <Link to="/services">Learn More</Link>
               </Button>
             </div>
-            <div className="bg-batanga-darkblue text-white rounded-md p-6 hover:shadow-lg transition-shadow">
+            <div className="bg-batanga-darkblue text-white rounded-md p-6 hover:shadow-lg transition-shadow flex flex-col">
               <h3 className="font-bold mb-2">Cybersecurity</h3>
               <p className="text-sm mb-4">Protect your digital assets from threats</p>
-              <Button className="bg-yellow-500 hover:bg-yellow-600 text-black mt-2">
+              <Button
+                className="bg-yellow-500 hover:bg-yellow-600 text-black mt-auto"
+                onClick={() => navigate("/cybersecurity")}
+              >
                 Learn More
               </Button>
             </div>
-            <div className="bg-batanga-darkblue text-white rounded-md p-6 hover:shadow-lg transition-shadow">
+            <div className="bg-batanga-darkblue text-white rounded-md p-6 hover:shadow-lg transition-shadow flex flex-col">
               <h3 className="font-bold mb-2">Cloud Solutions</h3>
               <p className="text-sm mb-4">Scale your infrastructure efficiently</p>
-              <Button className="bg-yellow-500 hover:bg-yellow-600 text-black mt-2">
+              <Button
+                className="bg-yellow-500 hover:bg-yellow-600 text-black mt-auto"
+                onClick={() => navigate("/cloud-solutions")}
+              >
                 Learn More
               </Button>
             </div>
@@ -89,7 +100,7 @@ export default function Index() {
               <img 
                 src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b" 
                 alt="Analytics Innovation" 
-                className="rounded-lg shadow-lg max-w-full h-auto"
+                className="rounded-lg shadow-lg max-w-full h-auto w-full object-cover"
                 width={500}
                 height={300} 
               />
@@ -164,7 +175,7 @@ export default function Index() {
               <img 
                 src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" 
                 alt="Data Analytics Solutions" 
-                className="rounded-lg shadow-lg max-w-full h-auto"
+                className="rounded-lg shadow-lg max-w-full h-auto w-full object-cover"
                 width={500}
                 height={300} 
               />
@@ -179,8 +190,8 @@ export default function Index() {
           <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
             Kickstart Your Secure Digital Transformation Journey, Today!
           </h2>
-          <Button className="bg-batanga-darkblue hover:bg-batanga-oceanblue">
-            Contact Us Now
+          <Button className="bg-batanga-darkblue hover:bg-batanga-oceanblue" asChild>
+            <a href="mailto:batangaanalytics@gmail.com">Contact Us Now</a>
           </Button>
         </div>
       </section>
